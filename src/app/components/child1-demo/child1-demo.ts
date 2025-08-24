@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child1-demo',
@@ -10,4 +10,15 @@ import { Component } from '@angular/core';
 export class Child1Demo {
   a: any;
   b: any;
+
+  constructor() {
+    console.log("Child constructor")
+  }
+  ngOnChanges(myChanges: SimpleChanges) {
+    console.log('Child ngOnChanges', myChanges);
+  }
+  ngDoCheck() {
+    console.log('Child ngDoCheck');
+  }
 }
+
