@@ -1,0 +1,33 @@
+<h3 class="text-center">Product List</h3>
+<div>
+    <input type="text" [(ngModel)]="titleToSearch">
+    <button (click)="searchItems()">Search</button>
+    <button (click)="sortPriceAsc()">Sort Price low to high</button>
+    <button (click)="sortPriceDes()">Sort Price high to low</button>
+</div>
+<div class="container">
+  <div class="row">
+    @for(user of usersArr | paginate: { itemsPerPage: 4, currentPage: p};track $index){
+    <div class="col-sm-3">
+      <div class="card">
+        <img src={{user.image}} class="card-img-top" alt="..." height="200px">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{user.id}}</h5>
+          <p class="card-text">{{user.title}}</p>
+          <p class="card-text">{{user.price}}</p>
+          <p class="card-text text-truncate">{{user.description}}</p>
+          <p class="card-text">{{user.category}}</p>
+          <p class="card-text">{{user.image}}</p>
+          <fa-icon [icon]='faStar'/>
+          <p class="card-text">{{user.rating.rate}}</p>
+          <p class="card-text">{{user.rating.count}}</p>
+          <a href="#" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class='col-sm-4 offset-4 mt-2'>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div>
+  <input type="text" [(ngModel)]="newEmployee.name" placeholder="Name" class="form-control mb-2">
+  <input type="text" [(ngModel)]="newEmployee.role" placeholder="Role" class="form-control mb-2">
+  <input type="number" [(ngModel)]="newEmployee.salary" placeholder="Salary" class="form-control mb-2">
+  <select [(ngModel)]="newEmployee.status" class="form-control mb-2">
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+  </select>
+  <button class="btn btn-success" (click)="onAdd()">Add Employee</button>
+  <br>
+</div>

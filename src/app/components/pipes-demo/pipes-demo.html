@@ -1,0 +1,103 @@
+<h3 class="text-center">Let's Learn Angular Pipes</h3>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>uppercase , lowercase, titlecase pipe:</h5>
+  <div>Name without any pipe: {{ myName }}</div>
+  <div>Name with uppercase pipe: {{ myName | uppercase }}</div>
+  <div>Name with lowercase pipe: {{ myName | lowercase }}</div>
+  <div>Name with titlecase pipe: {{ myName | titlecase }}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Currency pipe:</h5>
+  <div>mySal without any pipe: {{ mySal }}</div>
+  <div>mySal with currency pipe: {{ mySal | currency }}</div>
+  <div>mySal with currency pipe: {{ mySal | currency : 'USD' : 'symbol' }}</div>
+  <div>mySal with currency pipe: {{ mySal | currency : 'USD' : 'code' }}</div>
+  <div>mySal with currency pipe: {{ mySal | currency : 'INR' }}</div>
+                              m<!-- input | pipeName : Argument -->
+  <div>mySal with currency pipe: {{ mySal | currency : '&euro;' }}</div>
+  <div>mySal with currency pipe: {{ mySal | currency : '&#x5143;' }}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Date pipe:</h5>
+  <div>{{ today }}</div>
+  <div>{{ today | date }}</div>
+  <div>{{ today | date : 'shortDate' }}</div>
+  <div>{{ today | date : 'mediumDate' }}</div>
+  <div>{{ today | date : 'longDate' }}</div>
+  <div>{{ today | date : 'fullDate' }}</div>
+  <div>{{ today | date : 'shortTime' }}</div>
+  <div>{{ today | date : 'mediumTime' }}</div>
+  <div>{{ today | date : 'longTime' }}</div>
+  <div>{{ today | date : 'fullTime' }}</div>
+
+  <!-- custom Formatting -->
+  <div>{{ today | date : 'dd / MMM / yyyy' }}</div>
+
+  <!-- Pipe Chaining -->
+  <div>{{ today | date : 'dd / MMMM / yyyy' | lowercase }}</div>
+  <div>{{ today | date : 'dd / MMMM / yyyy' | uppercase }}</div>
+  <div>{{ today | date : 'dd / MMMM / yyyy' }}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Number/Decimal & percent pipe:</h5>
+  <div>{{ 12.111222333 | number : '3.2-5' }}</div>
+  <div>{{ 2.5 | number : '3.2-5' }}</div>
+
+  <div>{{ 2.5 | percent }}</div>
+  <div>{{ 0.7 | percent }}</div>
+  <div>{{ 0.064 | percent }}</div>
+  <div>{{ 0.065 | percent }}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>json pipe:</h5>
+  <div>{{ user | json }}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>keyvalue pipe:</h5>
+  @for(entry of user | keyvalue;track $index){
+  <div>{{ entry.key }}---{{ entry.value }}</div>
+  }
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>slice pipe:</h5>
+  <div>{{ arr }}</div>
+  <div>{{ arr | slice : 2 }}</div>
+  <div>{{ arr | slice : 2 : 5 }}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>async pipe:</h5>
+  <div>Observable:: {{ num }}</div>
+  <div>Subscribe the Observable:: {{ num | async }}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Custom pipe (Remaining Char):</h5>
+
+  <div><input type="number" [(ngModel)]="mySal" /></div>
+
+  <textarea maxlength="100" [(ngModel)]="msg"></textarea>
+  <div>Remaining Char: {{ msg | remaining }}</div>
+
+  <textarea maxlength="200" [(ngModel)]="msg2"></textarea>
+  <div>Remaining Char: {{ msg2 | remaining : 200 }}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Pure & Impure Pipe</h5>
+
+  <h4>
+    @for(ele of arr | mySort;track $index){
+    <span>{{ ele }} &nbsp;</span>
+    }
+  </h4>
+  <input #newNum />
+  <button class="btn btn-primary mx-2" (click)="arr.push(+newNum.value)">Add</button>
+</div>

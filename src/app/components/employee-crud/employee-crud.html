@@ -1,0 +1,32 @@
+<app-employee-table [employeesArr]="employeesArr"
+(deleteEvent)="deleteEmployee($event)"></app-employee-table>
+<app-employee-add (addEmployee)="addEmployee($event)"></app-employee-add>
+
+<p><br>Hi I'm Parent</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Role</th>
+            <th>salary</th>
+            <th>status</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of employeesArr;let i=$index;track $index)
+        {
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.role}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.status}}</td>
+            <td> <button class="btn btn-danger" (click)="deleteEmployee(i)">
+            Delete</button></td>
+        </tr>
+    }
+
+    </tbody>
+</table>

@@ -1,0 +1,83 @@
+<div class="container">
+    <div [attr.class]="isChecked ? 'card m-3 p-3 dark-mode' : 'card m-3 p-3'">
+        <h3 class="text-center heading">Assignment 1</h3>
+
+        <div class="Q1 p-2">
+            <p [hidden]="!togglePara">
+                This is Toggle text changes on button click
+            </p>
+            <button class="btn btn-success" (click)="toggleButton()">{{toggleLabel}}</button>
+        </div>
+
+        <div class="Q2 p-2">
+            <textarea class="form-control" rows="3" [(ngModel)]="text" [attr.maxlength] = "mLength"></textarea>
+            <p>Remaining Characters: {{mLength - text.length}}</p>
+        </div>
+
+        <div class="q3 p-2">
+          <div>Select a State {{selectState}}</div>
+            <select class="form-select" [(ngModel)]="selectState">
+                <option>Select State</option>
+                <option>Texas</option>
+                <option>South Carolina</option>
+                <option>North Carolina</option>
+                <option>Tennessee</option>
+                <option>Florida</option>
+                <option>Arizona</option>
+                <option>California</option>
+                <option>Massachusetts</option>
+                <option>Colorado</option>
+            </select>
+        </div>
+
+        <div class="q4 p-2">
+          <div>Select an operation</div>
+            <div class="d-flex">
+           <input class="form-control num1" placeholder="Enter number 1" id="t1" [(ngModel)]="num1" value=20/>
+           <input class="form-control num2" placeholder="Enter number 2" [(ngModel)]="num2"/>
+            <select class="form-control" [(ngModel)] ="selectOpertation" (change)="operation()">
+                <option>Select Operation</option>
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+            </div>
+            <p>The result is : {{res}}</p>
+        </div>
+
+        <div class="q5 p-2">
+           <input class="form-control" placeholder="Enter Password" [type]="toggleType ? 'password' : 'text'" />
+           <button class="btn btn-success m-2" (click) = togglePassword()>{{toggleType ? 'Show' : 'Hide'}} password</button>
+        </div>
+
+        <div class="q6 p-2">
+           <div class="d-flex">
+            <button class="btn btn-success m-2" (click) = decrement() [disabled]=isDisabled>-</button>
+            <input class="form-control" [value]=count/>
+            <button class="btn btn-success m-2" (click) = increment()>+</button>
+            </div>
+         </div>
+
+         <div class="q7 p-2">
+            <div class="form-check form-switch">
+              <div [style.background]="isChecked ? 'black' : 'white'"
+                   [style.color]="isChecked ? 'white' : 'black'"
+                    style="padding: 20px; margin-top: 10px;">
+                    This text area changes color with the switch!
+              </div>
+                <input class="form-check-input" type="checkbox" role="switch" [checked]="isChecked" (change)=switchTheme()>
+                <label class="form-check-label" for="switchCheckChecked">{{isChecked ? 'Dark' : 'Light'}} Mode</label>
+              </div>
+          </div>
+
+          <div class="q8 p-2">
+                <div>Enter the temperature in degree Celsius</div>
+                <input class="form-control" placeholder="Enter temp celsius" [(ngModel)] = 'ConvertVal'/>
+
+                <button class="btn btn-success m-2" (click) = tempConvert()>Convert</button>
+                <p>{{ConvertedVal}} F</p>
+          </div>
+
+    </div>
+</div>
