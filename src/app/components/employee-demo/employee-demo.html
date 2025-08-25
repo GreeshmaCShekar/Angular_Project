@@ -1,0 +1,56 @@
+<p>
+  <b>Select an option from the drop down <br /></b>
+</p>
+<select name="Select" [(ngModel)]="employeesFilter" (click)="showEmployees()">
+  <option value="aLL">All Employees</option>
+  <option value="male">Male Employees</option>
+  <option value="female">Female Employees</option>
+</select>
+<br />
+<br />
+<p><b>Select the view of data</b></p>
+<button btn btn-primary (click)="toggleView()">
+  {{ istableView ? 'switch to card view' : 'switch to table view' }}
+</button>
+@if(istableView){
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Employee Id</th>
+      <th>Employee Name</th>
+      <th>Role</th>
+      <th>salary</th>
+      <th>status</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(emp of employeeData;let i=$index;track $index) {
+    <tr>
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.role }}</td>
+      <td>{{ emp.salary }}</td>
+      <td>{{ emp.status }}</td>
+      <td>{{ emp.gender }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+} @if(!istableView){
+<div class="row">
+  @for (emp of employeeData; track emp.id) {
+  <div class="col-md-3 mb-3">
+    <div class="card p-3 shadow-sm">
+      <h5>{{ emp.name }}</h5>
+      <p><b>ID:</b> {{ emp.id }}</p>
+      <p><b>Role:</b> {{ emp.role }}</p>
+      <p><b>Salary:</b>{{emp.salary}}</p>
+      <p><b>Status:</b>{{emp.status}}</p>
+      <p><b>Gender:</b> {{ emp.gender }}</p>
+      <p><b></b></p>
+    </div>
+  </div>
+  }
+</div>
+}
