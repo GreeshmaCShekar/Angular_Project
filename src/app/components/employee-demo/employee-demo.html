@@ -1,3 +1,13 @@
+<!-- Assignment
+==========
+1. create an EmployeeService
+	Service should have 1 variable.  ex: employees = [ {}, {}, {} {}]
+	Service should have 3 methods.   ex: getAllEmployees(), getMaleEmployees(), getFemaleEmployees()
+2. inject that service in EmployeeComponent
+3. Display List of Employees in a table / Card
+  have a dropdown with 3 values- allEmployees , maleEmployees , femaleEmployees
+  based on the dropdown value selected, employee data should be shown -->
+
 <p>
   <b>Select an option from the drop down <br /></b>
 </p>
@@ -8,10 +18,11 @@
 </select>
 <br />
 <br />
-<p><b>Select the view of data</b></p>
 <button btn btn-primary (click)="toggleView()">
-  {{ istableView ? 'switch to card view' : 'switch to table view' }}
+  {{ istableView ? 'Switch to card view' : 'Switch to table view' }}
 </button>
+<br>
+<br>
 @if(istableView){
 <table class="table table-bordered table-striped">
   <thead>

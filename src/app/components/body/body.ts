@@ -1,4 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { HttpDemo1 } from '../http-demo1/http-demo1';
+import { CommentList } from '../comment-list/comment-list';
 // import { Databinding } from '../databinding/databinding';
 // import { Directives } from '../directives/directives';
 // import { MyModal } from '../my-modal/my-modal';
@@ -11,7 +13,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 // import { EmployeeList } from '../employee-list/employee-list';
 // import { Math1Demo } from '../math1-demo/math1-demo';
 // import { Math2Demo } from '../math2-demo/math2-demo';
-import { EmployeeDemo } from "../employee-demo/employee-demo";
+// import { EmployeeDemo } from "../employee-demo/employee-demo";
+// import { Products } from '../products/products';
 // import { TrafficDemo } from '../traffic-demo/traffic-demo';
 // import { EmployeeTable } from '../employee-table/employee-table';
 // import { EmployeeAdd } from "../employee-add/employee-add";
@@ -32,7 +35,10 @@ import { EmployeeDemo } from "../employee-demo/employee-demo";
     // TrafficDemo,
     // Math1Demo,
     // Math2Demo,
-    EmployeeDemo,
+    // EmployeeDemo,
+    // HttpDemo1,
+    // Products,
+    CommentList,
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
