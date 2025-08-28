@@ -3,6 +3,7 @@ import { HttpDemo1 } from '../http-demo1/http-demo1';
 import { CommentList } from '../comment-list/comment-list';
 import { Userscrud } from '../userscrud/userscrud';
 import { ObservalbeDemo1 } from "../observalbe-demo1/observalbe-demo1";
+import { ObservalbeDemo2 } from '../observalbe-demo2/observalbe-demo2';
 // import { Databinding } from '../databinding/databinding';
 // import { Directives } from '../directives/directives';
 // import { MyModal } from '../my-modal/my-modal';
@@ -42,7 +43,8 @@ import { ObservalbeDemo1 } from "../observalbe-demo1/observalbe-demo1";
     // Products,
     // CommentList,
     // Userscrud,
-    ObservalbeDemo1
+    // ObservalbeDemo1,
+    ObservalbeDemo2
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
