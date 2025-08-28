@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { HttpDemo1 } from '../http-demo1/http-demo1';
 import { CommentList } from '../comment-list/comment-list';
+import { Userscrud } from '../userscrud/userscrud';
+import { ObservalbeDemo1 } from "../observalbe-demo1/observalbe-demo1";
 // import { Databinding } from '../databinding/databinding';
 // import { Directives } from '../directives/directives';
 // import { MyModal } from '../my-modal/my-modal';
@@ -38,7 +40,9 @@ import { CommentList } from '../comment-list/comment-list';
     // EmployeeDemo,
     // HttpDemo1,
     // Products,
-    CommentList,
+    // CommentList,
+    // Userscrud,
+    ObservalbeDemo1
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

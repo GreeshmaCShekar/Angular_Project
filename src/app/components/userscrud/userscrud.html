@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">User CRUD</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-8">
+          <div class="card">
+            <div class="card-header">Users Tabel</div>
+            <div class="card-body">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for(user of usersObj; track $index){
+                  <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td class="d-flex">
+                      <button class="btn btn-sm btn-warning mx-1" (click)="editUser(user)">
+                        Edit</button
+                      ><button class="btn btn-sm btn-danger" (click)="deleteUser(user.id)">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">Add/Edit User</div>
+            <div class="card-body">
+              <div class="form-group my-1">
+                <label> Id </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Id"
+                  [(ngModel)]="inputId"
+                />
+              </div>
+              <div class="form-group my-1">
+                <label> Name </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Name"
+                  [(ngModel)]="inputName"
+                />
+              </div>
+
+              <div class="form-group my-1">
+                <label> User Name </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Username"
+                  [(ngModel)]="inputUserName"
+                />
+              </div>
+
+              <div class="form-group my-1">
+                <label> Email </label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter Email"
+                  [(ngModel)]="inputEmail"
+                />
+              </div>
+
+              <div class="form-group my-1">
+                <label> Phone </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Phone Number"
+                  [(ngModel)]="inputPhone"
+                />
+              </div>
+
+              <button type="button" class="btn btn-primary my-1" (click)="formSubmit()">Add</button>
+              <button type="button" class="btn btn-secondary my-1" (click)="formUpdate()">
+                update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
