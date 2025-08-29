@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-9">
-      <input type="search" class="col-sm-4 offset-4 p-1" [(ngModel)]="searchText" />
+      <input type="search" class="col-sm-4 offset-4 p-1" [(ngModel)]="searchText">
       <button class="btn btn-success mx-2" (click)="filterData()">Search</button>
     </div>
     <div class="col-sm-3">
@@ -12,22 +12,21 @@
     </div>
   </div>
   <div class="row mt-2">
-    @for (product of filteredProductArr | paginate: { itemsPerPage: 4, currentPage: p}; track
-    $index) {
+    @for (product of filteredProductArr | paginate: { itemsPerPage: 4, currentPage: p}; track $index) {
     <div class="col-sm-3">
       <div class="card">
-        <img src="{{ product.image }}" class="card-img-top" alt="..." height="200" />
+        <img src="{{product.image}}" class="card-img-top" alt="..." height="200">
         <div class="card-body text-center" appZoomout>
-          <h5 class="card-title">{{ product.id }}</h5>
-          <p class="card-text">{{ product.category }}</p>
-          <p class="card-text text-truncate">{{ product.title }}</p>
-          <p class="card-text">{{ product.price }}</p>
+          <h5 class="card-title">{{product.id}}</h5>
+          <p class="card-text">{{product.category}}</p>
+          <p class="card-text text-truncate">{{product.title}}</p>
+          <p class="card-text">{{product.price}}</p>
           <p class="card-text">
-            {{ product.rating.rate }}
-            <fa-icon [icon]="faStar" style="color: gold"></fa-icon>
-            ({{ product.rating.count }})
+            {{product.rating.rate}}
+            <fa-icon [icon]="faStar" style="color:gold"></fa-icon>
+            ({{product.rating.count}})
           </p>
-          <a href="#" class="btn btn-primary">Details</a>
+          <a href="#" class="btn btn-primary" (click)="addToCart(product)">Add To cart</a>
         </div>
       </div>
     </div>

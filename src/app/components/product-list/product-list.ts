@@ -5,6 +5,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { Zoomout } from '../../directives/zoomout';
+import { CartService } from '../../services/cart';
 
 @Component({
   selector: 'app-product-list',
@@ -23,6 +24,9 @@ export class ProductList {
   p: any;
   searchText: string = '';
 
+  constructor(private cartService: CartService) {
+  }
+
   filterData() {
     this.filteredProductArr = products.filter(prod => {
       return prod.title.toLowerCase().includes(this.searchText.toLowerCase());
@@ -33,5 +37,9 @@ export class ProductList {
   }
   sortByPriceDesc() {
     this.filteredProductArr.sort((p1, p2) => p2.price - p1.price);
+  }
+
+  addToCart(product: any) {
+    this.cartService.addItem(product);
   }
 }

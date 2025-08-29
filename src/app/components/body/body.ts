@@ -4,11 +4,12 @@ import { CommentList } from '../comment-list/comment-list';
 import { Userscrud } from '../userscrud/userscrud';
 import { ObservalbeDemo1 } from "../observalbe-demo1/observalbe-demo1";
 import { ObservalbeDemo2 } from '../observalbe-demo2/observalbe-demo2';
+// import { SubjectDemo1 } from "../subject-demo1/subject-demo1";
 // import { Databinding } from '../databinding/databinding';
 // import { Directives } from '../directives/directives';
 // import { MyModal } from '../my-modal/my-modal';
 // import { UserList } from '../user-list/user-list';
-// import { ProductList } from '../product-list/product-list';
+import { ProductList } from '../product-list/product-list';
 // import { Demo1 } from '../demo1/demo1';
 // import { PipesDemo } from '../pipes-demo/pipes-demo';
 // import { ParentDemo } from '../parent-demo/parent-demo';
@@ -30,7 +31,7 @@ import { ObservalbeDemo2 } from '../observalbe-demo2/observalbe-demo2';
     // MyModal,
     // UserList,
     // EmployeeList,
-    // ProductList,
+    ProductList,
     // Demo1,
     // PipesDemo,
     // ParentDemo,
@@ -44,7 +45,8 @@ import { ObservalbeDemo2 } from '../observalbe-demo2/observalbe-demo2';
     // CommentList,
     // Userscrud,
     // ObservalbeDemo1,
-    ObservalbeDemo2
+    // ObservalbeDemo2,
+    // SubjectDemo1
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
