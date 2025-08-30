@@ -5,6 +5,7 @@ import { Userscrud } from '../userscrud/userscrud';
 import { ObservalbeDemo1 } from "../observalbe-demo1/observalbe-demo1";
 import { ObservalbeDemo2 } from '../observalbe-demo2/observalbe-demo2';
 import { EmployeeSubjectDemo } from '../employee-subject-demo/employee-subject-demo';
+import { SignalDemo } from "../signal-demo/signal-demo";
 // import { SubjectDemo1 } from "../subject-demo1/subject-demo1";
 // import { Databinding } from '../databinding/databinding';
 // import { Directives } from '../directives/directives';
@@ -49,6 +50,7 @@ import { ProductList } from '../product-list/product-list';
     // ObservalbeDemo2,
     // SubjectDemo1,
     // EmployeeSubjectDemo,
+    // SignalDemo
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
