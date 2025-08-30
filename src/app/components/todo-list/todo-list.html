@@ -1,0 +1,25 @@
+<h3 class="text-center">Todo List (Signals)</h3>
+
+<div class="border border-3 p-3 m-3">
+  <input #todoInput type="text" placeholder="Enter todo" class="form-control mb-2" />
+  <button class="btn btn-primary w-100" (click)="add(todoInput.value); todoInput.value = ''">
+    Add Todo
+  </button>
+</div>
+<ul class="list-group m-3">
+  @for (todo of todos(); track todo.id) {
+  <li class="list-group-item d-flex justify-content-between">
+    <div>
+      <input type="checkbox" [checked]="todo.isCompleted" (click)="toggle(todo)" />
+      <span [class.text-decoration-line-through]="todo.isCompleted">
+        {{ todo.title }}
+      </span>
+    </div>
+    <button class="btn btn-sm btn-danger" (click)="remove(todo)">X</button>
+  </li>
+  }
+</ul>
+<div class="m-3">
+  <p><b>Completed:</b> {{ completedToDos().length }}</p>
+  <p><b>Remaining:</b> {{ remainingToDos().length }}</p>
+</div>
