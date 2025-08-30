@@ -1,0 +1,48 @@
+<div>
+  <h3 class="text-center">Employee-List-From-Subject</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Salary</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(employee of EmpArr; track $index){
+      <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.role }}</td>
+        <td>{{ employee.salary }}</td>
+        <td>{{ employee.status }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteEmployeeCom(employee.id)">Delete</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<h3>Add Employee</h3>
+<div>
+  <input type="text" [(ngModel)]="newEmployee.id" placeholder="id" class="form-control mb-2" />
+  <input type="text" [(ngModel)]="newEmployee.name" placeholder="Name" class="form-control mb-2" />
+  <input type="text" [(ngModel)]="newEmployee.role" placeholder="Role" class="form-control mb-2" />
+  <input
+    type="text"
+    [(ngModel)]="newEmployee.salary"
+    placeholder="Salary"
+    class="form-control mb-2"
+  />
+  <input
+    type="text"
+    [(ngModel)]="newEmployee.status"
+    placeholder="Status"
+    class="form-control mb-2"
+  />
+  <button (click)="addEmployeeCom()" class="btn btn-success">Add Employee</button>
+</div>
