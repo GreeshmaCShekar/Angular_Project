@@ -10,7 +10,7 @@ import { EmployeeSubjectDemo } from '../employee-subject-demo/employee-subject-d
 // import { Directives } from '../directives/directives';
 // import { MyModal } from '../my-modal/my-modal';
 // import { UserList } from '../user-list/user-list';
-// import { ProductList } from '../product-list/product-list';
+import { ProductList } from '../product-list/product-list';
 // import { Demo1 } from '../demo1/demo1';
 // import { PipesDemo } from '../pipes-demo/pipes-demo';
 // import { ParentDemo } from '../parent-demo/parent-demo';
@@ -32,7 +32,7 @@ import { EmployeeSubjectDemo } from '../employee-subject-demo/employee-subject-d
     // MyModal,
     // UserList,
     // EmployeeList,
-    // ProductList,
+    ProductList,
     // Demo1,
     // PipesDemo,
     // ParentDemo,
@@ -48,7 +48,7 @@ import { EmployeeSubjectDemo } from '../employee-subject-demo/employee-subject-d
     // ObservalbeDemo1,
     // ObservalbeDemo2,
     // SubjectDemo1,
-    EmployeeSubjectDemo,
+    // EmployeeSubjectDemo,
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
