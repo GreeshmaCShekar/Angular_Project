@@ -13,17 +13,15 @@ interface Todo {
   styleUrl: './todo-list.css'
 })
 export class TodoList {
-  // declare todos as signal
+
   todos: WritableSignal<Todo[]> = signal([
     { id: 1, title: 'Learn Angular Signals', isCompleted: false },
-    { id: 2, title: 'Build Todo App', isCompleted: true }
+    { id: 2, title: 'Build Todo App', isCompleted: false }
   ]);
 
-  // computed signals
   completedToDos = computed(() => this.todos().filter(t => t.isCompleted));
   remainingToDos = computed(() => this.todos().filter(t => !t.isCompleted));
 
-  // toggle completed
   toggle(todo: Todo) {
     this.todos.update(list =>
       list.map(t =>
@@ -32,14 +30,12 @@ export class TodoList {
     );
   }
 
-  // add new todo
   add(newTitle: string) {
     if (!newTitle.trim()) return;
     const newTodo: Todo = { id: Date.now(), title: newTitle, isCompleted: false };
     this.todos.update(list => [...list, newTodo]);
   }
 
-  // delete todo
   remove(todo: Todo) {
     this.todos.update(list => list.filter(t => t.id !== todo.id));
   }

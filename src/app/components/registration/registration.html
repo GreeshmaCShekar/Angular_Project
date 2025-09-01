@@ -1,0 +1,63 @@
+<h3 class="text-center">Template-driven Registration Form</h3>
+
+<div class="border border-3 rounded-3 p-3 col-sm-6 offset-3">
+  <form #regForm="ngForm" (ngSubmit)="submitMyForm(regForm)">
+    <p>
+      First Name:
+      <input name="firstName" [(ngModel)]="user.firstName" required minlength="3" />
+      @if(regForm.controls['firstName']?.hasError('required') && regForm.controls['firstName']?.touched){
+        <span class="text-danger">First name is required</span>
+      }
+      @if(regForm.controls['firstName']?.hasError('minlength')){
+        <span class="text-danger">Minimum 3 characters</span>
+      }
+    </p>
+    <p>
+      Email:
+      <input name="email" [(ngModel)]="user.email" required email />
+      @if(regForm.controls['email']?.hasError('required') && regForm.controls['email']?.touched){
+        <span class="text-danger">Email is required</span>
+      }
+      @if(regForm.controls['email']?.hasError('email')){
+        <span class="text-danger">Invalid email format</span>
+      }
+    </p>
+    <p>
+      Gender:
+      <input type="radio" name="gender" value="Male" [(ngModel)]="user.gender" required /> Male
+      <input type="radio" name="gender" value="Female" [(ngModel)]="user.gender" required /> Female
+      @if(regForm.controls['gender']?.hasError('required') && regForm.controls['gender']?.touched){
+        <span class="text-danger">Select gender</span>
+      }
+    </p>
+    <p>
+      Country:
+      <select name="country" [(ngModel)]="user.country" required>
+        <option value="" disabled>Select Country</option>
+        <option>USA</option>
+        <option>India</option>
+        <option>UK</option>
+        <option>Canada</option>
+      </select>
+      @if(regForm.controls['country']?.hasError('required') && regForm.controls['country']?.touched){
+        <span class="text-danger">Country is required</span>
+      }
+    </p>
+    <p>
+      <input type="checkbox" name="terms" [(ngModel)]="user.terms" required />
+      I agree to the terms & conditions
+      @if(regForm.controls['terms']?.hasError('required') && regForm.controls['terms']?.touched){
+        <span class="text-danger">You must accept the terms</span>
+      }
+    </p>
+    <p>
+      About Yourself:
+      <textarea name="about" [(ngModel)]="user.about" rows="3"></textarea>
+    </p>
+
+    <input type="reset" value="Reset" class="btn btn-secondary mx-2" />
+    <input type="submit" value="Register" class="btn btn-primary" [disabled]="regForm.invalid" />
+  </form>
+
+  <pre>{{ user | json }}</pre>
+</div>

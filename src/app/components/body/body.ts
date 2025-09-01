@@ -27,6 +27,12 @@ import { EmployeeTable } from '../employee-table/employee-table';
 import { EmployeeAdd } from "../employee-add/employee-add";
 import { FormDemo1 } from "../form-demo1/form-demo1";
 import { TodoList } from "../todo-list/todo-list";
+import { TemplateDrivenForm } from "../template-driven-form/template-driven-form";
+import { ModelDrivenForm } from "../model-driven-form/model-driven-form";
+import { Registration } from '../registration/registration';
+import { RouterOutlet } from '@angular/router';
+import { PasswordGenerator } from "../password-generator/password-generator";
+import { DynamicForm } from "../dynamic-form/dynamic-form";
 
 @Component({
   selector: 'app-body',
@@ -56,7 +62,13 @@ import { TodoList } from "../todo-list/todo-list";
     // SignalDemo,
     // SignalDemo2,
     // FormDemo1,
-    TodoList
+    // TodoList,
+    // TemplateDrivenForm,
+    // ModelDrivenForm,
+    // Registration,
+    // RouterOutlet,
+    // PasswordGenerator,
+    DynamicForm
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

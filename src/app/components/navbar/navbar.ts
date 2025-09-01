@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { Cart } from '../cart/cart';
+import { RouterLink } from '@angular/router';
+// import { Cart } from '../cart/cart';
 
 @Component({
   selector: 'app-navbar',
   imports: [
-    Cart
+    // Cart,
+    RouterLink
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
