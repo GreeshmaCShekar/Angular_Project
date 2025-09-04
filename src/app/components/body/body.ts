@@ -66,9 +66,9 @@ import { DynamicForm } from "../dynamic-form/dynamic-form";
     // TemplateDrivenForm,
     // ModelDrivenForm,
     // Registration,
-    // RouterOutlet,
+    RouterOutlet,
     // PasswordGenerator,
-    DynamicForm
+    // DynamicForm
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

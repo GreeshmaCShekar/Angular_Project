@@ -6,6 +6,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { Zoomout } from '../../directives/zoomout';
 import { CartService } from '../../services/cart';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +14,8 @@ import { CartService } from '../../services/cart';
     FontAwesomeModule,
     NgxPaginationModule,
     FormsModule,
-    Zoomout
+    Zoomout,
+    RouterLink
   ],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
