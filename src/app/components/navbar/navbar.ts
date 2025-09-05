@@ -13,5 +13,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.css'
 })
 export class Navbar {
-
+  userRole: string = 'student'; // student
 }
